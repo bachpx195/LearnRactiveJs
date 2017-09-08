@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
+    </head>
+    <body>
+        <div id="target"></div>
+        <script id="template" type="text/ractive">
+            <p>{{greeting}}, {{name}}!</p>
+        </script>
+
+        <script>
+            var ractive = new Ractive({
+                target: '#target',
+                template: '#template',
+                data: { greeting: 'Hello', name: 'world' }
+            });
+            ractive.set('greeting', 'Bonjour');
+            ractive.set('name', 'tout le monde');
+            ractive.set({
+                greeting: '你好',
+                name: '世界'
+            });
+        </script>
+    </body>
+</html>
